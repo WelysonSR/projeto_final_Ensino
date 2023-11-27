@@ -48,11 +48,17 @@ async function logicalUserDeletionById(id, delit) {
     await userModel.logicalUserDeletionById(id, delit);
 }
 
+async function getGamesByUserId(userId) {
+    const result = await userModel.getGamesByUserId(userId);
+    return result;
+}
+
 module.exports = {
     login,
     createUser,
     updateUser,
     deleteUserById,
     logicalUserDeletionById,
+    getGamesByUserId,
 }
 

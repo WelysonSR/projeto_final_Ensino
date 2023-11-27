@@ -25,10 +25,16 @@ async function logicalUserDeletionById(req, res) {
     res.status(200).json({ message: 'Usuário desativado com sucesso!' })
 }
 
+async function getGamesByUserId(req, res) {
+    const result = await userService.getGamesByUserId(req.params.id);
+    res.status(200).json(result)
+}
+
 module.exports = {
     login,
     createUser,
     updateUser,
     deleteUserById,
     logicalUserDeletionById,
+    getGamesByUserId,
 }

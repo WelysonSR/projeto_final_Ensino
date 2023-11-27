@@ -87,6 +87,24 @@ async function logicalUserDeletionById(id, delit) {
   });
 }
 
+function getGamesByUserId(userId) {
+  return new Promise((resolve, reject) => {
+    const query = `
+      SELECT Jogo.*
+      FROM Jogo
+      INNER JOIN User_Jogo ON Jogo.id = User_Jogo.jogoId
+      WHERE User_Jogo.userId = ?;
+    `;
+
+    connection.query(query, [userId], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
 
 module.exports = {
   getUser,
@@ -94,4 +112,5 @@ module.exports = {
   patchUser,
   deleteUserById,
   logicalUserDeletionById,
+  getGamesByUserId,
 };
