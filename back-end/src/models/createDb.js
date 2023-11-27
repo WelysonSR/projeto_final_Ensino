@@ -14,6 +14,15 @@ connection.connect((err) => {
   }
 });
 
+connection.query('DROP DATABASE IF EXISTS dev_games', (err) => {
+  if (err) {
+    console.error('Erro ao excluir o banco de dados dev_games:', err);
+  } else {
+    console.log('Banco de dados "dev_games" excluído com sucesso');
+  }
+});
+
+
 connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
   if (err) {
     console.error('Erro ao criar o banco de dados:', err);
@@ -106,16 +115,16 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
 
         const insertUsers = `
           INSERT INTO Users (user, firstName, lastName, email, password, userExit) VALUES
-            ('user1', 'John', 'Doe', 'john.doe@email.com', 'password1', true),
-            ('user2', 'Jane', 'Smith', 'jane.smith@email.com', 'password2', true),
-            ('user3', 'Bob', 'Johnson', 'bob.johnson@email.com', 'password3', true),
-            ('user4', 'Alice', 'Jones', 'alice.jones@email.com', 'password4', true),
-            ('user5', 'Charlie', 'Brown', 'charlie.brown@email.com', 'password5', true),
-            ('user6', 'Eva', 'Miller', 'eva.miller@email.com', 'password6', true),
-            ('user7', 'David', 'Williams', 'david.williams@email.com', 'password7', true),
-            ('user8', 'Sophia', 'Davis', 'sophia.davis@email.com', 'password8', true),
-            ('user9', 'Michael', 'Moore', 'michael.moore@email.com', 'password9', true),
-            ('user10', 'Olivia', 'Taylor', 'olivia.taylor@email.com', 'password10', true);
+            ('user1', 'John', 'Doe', 'john.doe@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user2', 'Jane', 'Smith', 'jane.smith@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user3', 'Bob', 'Johnson', 'bob.johnson@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user4', 'Alice', 'Jones', 'alice.jones@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user5', 'Charlie', 'Brown', 'charlie.brown@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user6', 'Eva', 'Miller', 'eva.miller@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user7', 'David', 'Williams', 'david.williams@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user8', 'Sophia', 'Davis', 'sophia.davis@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user9', 'Michael', 'Moore', 'michael.moore@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
+            ('user10', 'Olivia', 'Taylor', 'olivia.taylor@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true);
           `
         // Inserindo Usuarios
         connection.query(insertUsers, (err) => {

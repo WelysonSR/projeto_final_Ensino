@@ -2,7 +2,7 @@ const connection = require('./connection');
 
 async function getUser(user) {
   return new Promise((resolve, reject) => {
-    const query = 'SELECT * FROM Users WHERE user = ?';
+    const query = 'SELECT * FROM Users WHERE user = ? AND  userExit = true';
     connection.query(query, [user], (err, results) => {
       if (err) {
         reject(err);
@@ -52,7 +52,7 @@ async function patchUser(id, updateUser) {
   });
 }
 
-async function deleteUser(userId) {
+async function deleteUserById(userId) {
   return new Promise((resolve, reject) => {
     const query = 'DELETE FROM Users WHERE id = ?';
 
@@ -70,6 +70,28 @@ async function deleteUser(userId) {
   });
 }
 
+async function logicalUserDeletionById(id, delit) {
+  return new Promise((resolve, reject) => {
+    const query = 'UPDATE Users SET userExit = ? WHERE id = ?';
+    connection.query(query, [delit, id], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        if (results.affectedRows > 0) {
+          resolve(results[0]);
+        } else {
+          reject(new Error('Nenhum usuário encontrado para atualização'));
+        }
+      }
+    });
+  });
+}
+
+
 module.exports = {
-  getUser, insertUser, patchUser, deleteUser
+  getUser,
+  insertUser,
+  patchUser,
+  deleteUserById,
+  logicalUserDeletionById,
 };

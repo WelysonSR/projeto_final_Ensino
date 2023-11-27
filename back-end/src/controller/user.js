@@ -19,6 +19,16 @@ async function deleteUserById(req, res) {
     await userService.deleteUserById(req.params.id)
     res.status(200).json({ message: 'Usuário deletado com sucesso!' })
 }
+
+async function logicalUserDeletionById(req, res) {
+    await userService.logicalUserDeletionById(req.params.id, req.body)
+    res.status(200).json({ message: 'Usuário desativado com sucesso!' })
+}
+
 module.exports = {
-    login, createUser, updateUser, deleteUserById
+    login,
+    createUser,
+    updateUser,
+    deleteUserById,
+    logicalUserDeletionById,
 }
