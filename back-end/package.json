@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "node ./src/models/createDb.js && node ./src/api/server.js",
+    "prestart": "node ./src/models/createDb.js",
     "start": "node ./src/api/server.js",
     "dev": "nodemon ./src/api/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

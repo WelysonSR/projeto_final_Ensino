@@ -113,6 +113,25 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
           }
         });
 
+        // Cria tabela User_Jogo
+        const createTableUserJogo = `
+          CREATE TABLE User_Jogo (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            userId INT,
+            jogoId INT,
+            FOREIGN KEY (userId) REFERENCES Users(id),
+            FOREIGN KEY (jogoId) REFERENCES Jogo(id),
+            UNIQUE KEY unique_user_jogo (userId, jogoId)
+          );
+        `
+        connection.query(createTableUserJogo, (err) => {
+          if (err) {
+            console.error('Erro ao criar a tabela User_Jogo:', err);
+          } else {
+            console.log('Tabela criada com sucesso User_Jogo');
+          }
+        });
+
         const insertUsers = `
           INSERT INTO Users (user, firstName, lastName, email, password, userExit) VALUES
             ('user1', 'John', 'Doe', 'john.doe@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', true),
@@ -206,8 +225,40 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
             (10, 3),
             (10, 7);
           `
-        // Inserindo Relacinamento 
+        // Inserindo Relacinamento Jogo_Plataforma
         connection.query(insertJogoPlataforma, (err) => {
+          if (err) {
+            console.error('Erro ao inserir dados na tabela Jogo_Plataforma:', err);
+          } else {
+            console.log('Dados inseridos na tabela Jogo_Plataforma com sucesso');
+          }
+        });
+
+        // Inserindo Relacinamento User_Jogo
+        const insertUserJogo = `
+          INSERT INTO User_Jogo (userId, jogoId) VALUES
+            (1, 1),
+            (1, 2),
+            (2, 3),
+            (2, 4),
+            (3, 5),
+            (3, 6),
+            (4, 7),
+            (4, 8),
+            (5, 9),
+            (5, 10),
+            (6, 1),
+            (6, 2),
+            (7, 3),
+            (7, 4),
+            (8, 5),
+            (8, 6),
+            (9, 7),
+            (9, 8),
+            (10, 9),
+            (10, 10);
+        `
+        connection.query(insertUserJogo, (err) => {
           if (err) {
             console.error('Erro ao inserir dados na tabela Jogo_Plataforma:', err);
           } else {
