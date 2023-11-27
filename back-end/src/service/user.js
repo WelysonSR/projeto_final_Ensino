@@ -53,6 +53,16 @@ async function getGamesByUserId(userId) {
     return result;
 }
 
+async function addGameToUser(userId, jogoId) {
+    try {
+        if (!userId || !jogoId) throw new Error('400|userId e jogoId são obrigatórios.');
+        await userModel.addGameToUser(userId, jogoId);
+    } catch (error) {
+        throw new Error('409|O jogo já existe e não pode ser duplicado.');
+    }
+
+}
+
 module.exports = {
     login,
     createUser,
@@ -60,5 +70,6 @@ module.exports = {
     deleteUserById,
     logicalUserDeletionById,
     getGamesByUserId,
+    addGameToUser,
 }
 

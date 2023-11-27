@@ -7,6 +7,7 @@ router.patch('/update/:id', userController.updateUser)
 router.delete('/delete/:id', userController.deleteUserById)
 router.patch('/disabled/:id', userController.logicalUserDeletionById)
 router.get('/games/:id', userController.getGamesByUserId)
+router.post('/game', userController.addGameToUser)
 
 module.exports = router
     

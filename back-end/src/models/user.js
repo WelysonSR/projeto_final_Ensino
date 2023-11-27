@@ -106,6 +106,20 @@ function getGamesByUserId(userId) {
   });
 }
 
+function addGameToUser(userId, jogoId) {
+  return new Promise((resolve, reject) => {
+    const query = 'INSERT INTO User_Jogo (userId, jogoId) VALUES (?, ?)';
+
+    connection.query(query, [userId, jogoId], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
 module.exports = {
   getUser,
   insertUser,
@@ -113,4 +127,5 @@ module.exports = {
   deleteUserById,
   logicalUserDeletionById,
   getGamesByUserId,
+  addGameToUser,
 };
