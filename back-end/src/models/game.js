@@ -64,9 +64,29 @@ async function getAllGames() {
   });
 }
 
+async function getPlatformByGames(idGame) {
+  return new Promise((resolve, reject) => {
+    const query = `
+      SELECT P.nome AS nome_plataforma
+      FROM Jogo_Plataforma JP
+      INNER JOIN Plataforma P ON JP.id_plataforma = P.id
+      WHERE JP.id_jogo = ?
+    `;
+
+    connection.query(query, [idGame], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
 module.exports = {
   insertGame,
   updateGame,
   deleteGame,
   getAllGames,
+  getPlatformByGames,
 }

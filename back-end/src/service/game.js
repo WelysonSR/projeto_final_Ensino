@@ -19,9 +19,15 @@ async function getAllGames() {
   return result;
 }
 
+async function getPlatformByGames(idGame){
+  const result = await gameModel.getPlatformByGames(idGame);
+  return result;
+}
+
 module.exports = {
   insertGame,
   updateGame,
   deleteGame,
   getAllGames,
+  getPlatformByGames,
 }
