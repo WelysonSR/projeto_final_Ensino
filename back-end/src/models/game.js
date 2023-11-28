@@ -51,8 +51,22 @@ async function deleteGame(gameId) {
   });
 }
 
+async function getAllGames() {
+  return new Promise((resolve, reject) => {
+    const query = 'SELECT * FROM Jogo';
+    connection.query(query, (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
 module.exports = {
   insertGame,
   updateGame,
   deleteGame,
+  getAllGames,
 }

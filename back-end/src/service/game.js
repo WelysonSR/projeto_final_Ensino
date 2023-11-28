@@ -14,8 +14,14 @@ async function deleteGame(gameId) {
   return result;
 }
 
+async function getAllGames() {
+  const result = await gameModel.getAllGames();
+  return result;
+}
+
 module.exports = {
   insertGame,
   updateGame,
-  deleteGame
+  deleteGame,
+  getAllGames,
 }

@@ -15,8 +15,14 @@ async function deleteGame(req, res) {
   res.status(200).json({ message: 'Jogo deletado com sucesso!' });
 }
 
+async function getAllGames(_req, res) {
+  const result = await gameService.getAllGames();
+  res.status(200).json(result);
+}
+
 module.exports = {
   insertGame,
   updateGame,
   deleteGame,
+  getAllGames,
 }
