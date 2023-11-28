@@ -64,9 +64,59 @@ async function getAllPlatform() {
   });
 }
 
+async function addGameToPlatform(idGame, idPlatform) {
+  return new Promise((resolve, reject) => {
+    const query = 'INSERT INTO Jogo_Plataforma (id_jogo, id_plataforma) VALUES (?, ?)';
+
+    connection.query(query, [idGame, idPlatform], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
+async function removeGameFromPlatform(idGame, idPlatform) {
+  return new Promise((resolve, reject) => {
+    const query = 'DELETE FROM Jogo_Plataforma WHERE id_plataforma = ? AND id_jogo = ?';
+
+    connection.query(query, [idPlatform, idGame], (err, _results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
+async function getGamesByPlatform(idPlatform) {
+  return new Promise((resolve, reject) => {
+    const query = `
+      SELECT Jogo.id, Jogo.nome
+      FROM Jogo
+      INNER JOIN Jogo_Plataforma ON Jogo.id = Jogo_Plataforma.id_jogo
+      WHERE Jogo_Plataforma.id_plataforma = ?;
+    `;
+
+    connection.query(query, [idPlatform], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
 module.exports = {
   insertPlatform,
   updatePlatform,
   deletePlatform,
   getAllPlatform,
+  addGameToPlatform,
+  removeGameFromPlatform,
+  getGamesByPlatform,
 }

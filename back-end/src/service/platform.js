@@ -17,9 +17,30 @@ async function getAllPlatform() {
   return await platformModels.getAllPlatform();
 }
 
+async function addGameToPlatform(idGame, idPlatform) {
+  try {
+      if (!idGame || !idPlatform) throw new Error('400|idPlatform e idGame são obrigatórios.');
+      await platformModels.addGameToPlatform(idGame, idPlatform);
+  } catch (error) {
+      throw new Error('409|O jogo já existe nessa Plataforma e não pode ser duplicado.');
+  }
+
+}
+
+async function removeGameFromPlatform(idGame, idPlatform) {
+  await platformModels.removeGameFromPlatform(idGame, idPlatform);
+}
+
+async function getGamesByPlatform(idPlatform) {
+  return await platformModels.getGamesByPlatform(idPlatform);
+}
+
 module.exports = {
   insertPlatform,
   updatePlatform,
   deletePlatform,
-  getAllPlatform
+  getAllPlatform,
+  addGameToPlatform,
+  removeGameFromPlatform,
+  getGamesByPlatform,
 }
