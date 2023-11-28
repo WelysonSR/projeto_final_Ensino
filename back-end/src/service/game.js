@@ -5,6 +5,17 @@ async function insertGame(data) {
   return result;
 }
 
+async function updateGame(gameId, game) {
+  await gameModel.updateGame(gameId, game);
+}
+
+async function deleteGame(gameId) {
+  const result = await gameModel.deleteGame(gameId);
+  return result;
+}
+
 module.exports = {
   insertGame,
+  updateGame,
+  deleteGame
 }
