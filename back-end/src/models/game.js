@@ -53,7 +53,24 @@ async function deleteGame(gameId) {
 
 async function getAllGames() {
   return new Promise((resolve, reject) => {
-    const query = 'SELECT * FROM Jogo';
+    const query = `
+    SELECT
+    Jogo.id,
+    Jogo.nome,
+    Jogo.cat,
+    Jogo.nota,
+    Jogo.status,
+    Jogo.recomendacao,
+    GROUP_CONCAT(Plataforma.nome SEPARATOR ', ') AS plataformas
+    FROM
+      Jogo
+    LEFT JOIN
+      Jogo_Plataforma ON Jogo.id = Jogo_Plataforma.id_jogo
+    LEFT JOIN
+      Plataforma ON Jogo_Plataforma.id_plataforma = Plataforma.id
+    GROUP BY
+      Jogo.id;
+    `;
     connection.query(query, (err, results) => {
       if (err) {
         reject(err);

@@ -83,7 +83,6 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
             nota DECIMAL(3,1),
             status ENUM('jogado', 'zerado', 'outros'),
             recomendacao ENUM('Sim', 'Não'),
-            plataforma_disp VARCHAR(255),
             INDEX (nome)  -- Add an index on the 'nome' column
           );
         `
@@ -157,17 +156,17 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
 
         const insertPlataforma = `
           INSERT INTO Plataforma (nome) VALUES
-            ('PlayStation 4'),
-            ('Xbox One'),
-            ('Nintendo Switch'),
-            ('PC'),
-            ('PlayStation 5'),
-            ('Xbox Series X'),
-            ('Mobile'),
-            ('PlayStation 3'),
-            ('Xbox 360'),
-            ('Wii');
-          `
+            ('Steam'),
+            ('Xbox Store'),
+            ('Uplay'),
+            ('GOG'),
+            ('Epic Games Store'),
+            ('PlayStation Store'),
+            ('G2A'),
+            ('Green Man Gaming'),
+            ('Humble Store'),
+            ('Origin')
+          `;
         // Inserindo plataformas
         connection.query(insertPlataforma, (err) => {
           if (err) {
@@ -178,17 +177,17 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
         });
 
         const insertJogos = `
-          INSERT INTO Jogo (nome, cat, plataforma_que, nota, status, recomendacao, plataforma_disp) VALUES
-            ('The Witcher 3', 'RPG', 'PC', 9.5, 'zerado', 'Sim', 'PC, PlayStation 4, Xbox One'),
-            ('Red Dead Redemption 2', 'Ação e Aventura', 'PlayStation 4', 9.8, 'zerado', 'Sim', 'PlayStation 4, Xbox One'),
-            ('Animal Crossing: New Horizons', 'Simulação', 'Nintendo Switch', 9.0, 'jogado', 'Sim', 'Nintendo Switch'),
-            ('Cyberpunk 2077', 'RPG', 'PC', 8.0, 'outros', 'Não', 'PC, PlayStation 4, Xbox One'),
-            ('Among Us', 'Multijogador', 'Mobile', 8.5, 'jogado', 'Sim', 'Mobile'),
-            ('The Legend of Zelda: Breath of the Wild', 'Ação e Aventura', 'Nintendo Switch', 9.7, 'zerado', 'Sim', 'Nintendo Switch'),
-            ('GTA V', 'Ação e Aventura', 'PC', 9.3, 'zerado', 'Sim', 'PC, PlayStation 4, Xbox One'),
-            ('FIFA 22', 'Esportes', 'PlayStation 5', 8.2, 'jogado', 'Sim', 'PlayStation 4, PlayStation 5, Xbox One, Xbox Series X'),
-            ('Minecraft', 'Aventura', 'PC', 9.0, 'zerado', 'Sim', 'PC, PlayStation 4, Xbox One, Nintendo Switch'),
-            ('Super Mario Odyssey', 'Ação e Aventura', 'Nintendo Switch', 9.5, 'zerado', 'Sim', 'Nintendo Switch');
+          INSERT INTO Jogo (nome, cat, plataforma_que, nota, status, recomendacao) VALUES
+            ('The Witcher 3', 'RPG', 'PC', 9.5, 'zerado', 'Sim'),
+            ('Red Dead Redemption 2', 'Ação e Aventura', 'PlayStation 4', 9.8, 'zerado', 'Sim'),
+            ('Animal Crossing: New Horizons', 'Simulação', 'Nintendo Switch', 9.0, 'jogado', 'Sim'),
+            ('Cyberpunk 2077', 'RPG', 'PC', 8.0, 'outros', 'Não'),
+            ('Among Us', 'Multijogador', 'Mobile', 8.5, 'jogado', 'Sim'),
+            ('The Legend of Zelda: Breath of the Wild', 'Ação e Aventura', 'Nintendo Switch', 9.7, 'zerado', 'Sim'),
+            ('GTA V', 'Ação e Aventura', 'PC', 9.3, 'zerado', 'Sim'),
+            ('FIFA 22', 'Esportes', 'PlayStation 5', 8.2, 'jogado', 'Sim'),
+            ('Minecraft', 'Aventura', 'PC', 9.0, 'zerado', 'Sim'),
+            ('Super Mario Odyssey', 'Ação e Aventura', 'Nintendo Switch', 9.5, 'zerado', 'Sim');
           `
         // Inserindo Jogos
         connection.query(insertJogos, (err) => {
