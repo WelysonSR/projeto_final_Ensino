@@ -5,6 +5,7 @@ const cors = require('cors')
 const error = require('../middleware/error')
 const user = require('../router/user')
 const game = require('../router/game')
+const platform = require('../router/platform')
 
 
 app.use(cors())
@@ -13,6 +14,7 @@ app.use(express.json())
 app.get('/', (req,res)=>res.status(200).json({message:'ok'}))
 app.use('/user', user)
 app.use('/game', game)
+app.use('/platform', platform)
 
 app.use(error) //Próximos códigos acima dessa linha
 module.exports = app
