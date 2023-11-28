@@ -120,6 +120,20 @@ function addGameToUser(userId, jogoId) {
   });
 }
 
+function removeGameFromUser(userId, jogoId) {
+  return new Promise((resolve, reject) => {
+    const query = 'DELETE FROM User_Jogo WHERE userId = ? AND jogoId = ?';
+
+    connection.query(query, [userId, jogoId], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
 module.exports = {
   getUser,
   insertUser,
@@ -128,4 +142,5 @@ module.exports = {
   logicalUserDeletionById,
   getGamesByUserId,
   addGameToUser,
+  removeGameFromUser,
 };

@@ -63,6 +63,10 @@ async function addGameToUser(userId, jogoId) {
 
 }
 
+async function removeGameFromUser(userId, jogoId) {
+    await userModel.removeGameFromUser(userId, jogoId);
+}
+
 module.exports = {
     login,
     createUser,
@@ -71,5 +75,5 @@ module.exports = {
     logicalUserDeletionById,
     getGamesByUserId,
     addGameToUser,
+    removeGameFromUser,
 }
-

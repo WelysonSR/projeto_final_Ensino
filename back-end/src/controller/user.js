@@ -36,6 +36,12 @@ async function addGameToUser(req, res) {
     res.status(200).json({ message: 'Jogo adicionado com sucesso!'});
 }
 
+async function removeGameFromUser(req, res) {
+    const { userId, jogoId } = req.body;
+    await userService.removeGameFromUser(userId, jogoId)
+    res.status(200).json({ message: 'Jogo removido com sucesso!'});
+}
+
 module.exports = {
     login,
     createUser,
@@ -44,4 +50,5 @@ module.exports = {
     logicalUserDeletionById,
     getGamesByUserId,
     addGameToUser,
+    removeGameFromUser,
 }
