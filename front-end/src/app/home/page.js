@@ -6,25 +6,28 @@ import { gamesAxios } from "@/util/axios";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [games, setGames] = useState([])
-  const [user, setUser] = useState({})
-
-  console.log(`Front: ${typeof games} ${games}`)
+  const [games, setGames] = useState([]);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    const getGames = async () => {
-      const result = await gamesAxios()
-      return result
-    }
-    setGames(getGames())
-    setUser(JSON.parse(localStorage.getItem('user')))
-  }, [])
+    const fetchData = async () => {
+      try {
+        const result = await gamesAxios();
+        setGames(result);
+        setUser(JSON.parse(localStorage.getItem('user')));
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section>
       <NavBarHome />
-      {
-        games.map(({ id, cat, nome, nota, plataforma_disp, recomendacao, status }) => (
+      <div className="home-section">
+        {games.map(({ id, cat, nome, nota, plataforma_disp, recomendacao, status }) => (
           <Card
             key={id}
             userId={user.id}
@@ -36,8 +39,8 @@ export default function Home() {
             recomendacao={recomendacao}
             status={status}
           />
-        ))
-      }
+        ))}
+      </div>
     </section>
-  )
+  );
 }
