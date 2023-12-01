@@ -1,3 +1,10 @@
+import NavBarHome from "@/components/navBarHome";
+
 export default function Home() {
-  return <h1>Olá</h1>
+  return (
+    <section>
+      <NavBarHome />
+      <h1>Olá</h1>
+    </section>
+  )
 }

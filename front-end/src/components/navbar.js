@@ -11,8 +11,6 @@ export default function NavBar() {
       </div>
       <div className="nav-div">
         <ul className="nav-ul">
-          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/crud_jogos">Cadastrar Jogos</Link></li>
-          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/crud_plataforma">Cadastrar Plataforma</Link></li>
           <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/noticias">Noticias</Link></li>
           <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/comunidade">Comunidade</Link></li>
           <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/sobre">Sobre Nós</Link></li>
