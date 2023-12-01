@@ -4,68 +4,7 @@ body {
   background-color: #1b1f27;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 250px;
-    margin: 0 auto;
-}
-
-.menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-/* // Estilos para a seção de jogos / */
-.games {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-/* / Estilos para os cards de jogos / */
-.gameCard {
-  width: 250px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-  background-color: #f7f7f7;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s; /* Efeito de transição no transform */
-}
-
-.cardImg {
-  max-width: 100%;
-  height: auto;
-}
-
-.cardH3 {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-.cardP {
-  font-size: 14px;
-}
-
-.cardA {
-  display: block;
-  margin-top: 10px;
-  text-decoration: none;
-  color: #007BFF;
-}
-
-/* / Efeito de movimento ao passar o mouse / */
-.game-card:hover {
-  transform: translate(0, -5px); /* Move 5 pixels para cima ao passar o mouse */
+  color: #f4f4f4;
 }
 
 /* Carousel.css */
@@ -149,4 +88,43 @@ body {
 
 .nav-li-link.active {
   color: #1d0547; /* Cor do link ativo */
+}
+
+/* CSS Page Login*/
+
+.login-form {
+  max-width: 300px;
+  margin: 125px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-span {
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.login-input-submit[type="submit"] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.login-input-submit[type="submit"]:hover {
+  background-color: #45a049;
 }
