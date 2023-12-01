@@ -11,9 +11,15 @@ export default function Cadastro() {
   return (
     <main>
       <NavBarHome />
-      {
-        render ? <CadastrarJogo /> : <CadastrarPlataforma />
-      }
+      <div className="cadastro-main">
+        <div className="cadastro-div">
+          <span className="cadastro-span" onClick={() => setRender(true)}>Jogo</span>
+          <span className="cadastro-span" onClick={() => setRender(false)}>Plataforma</span>
+        </div>
+        {
+          render ? <CadastrarJogo /> : <CadastrarPlataforma />
+        }
+      </div>
     </main>
   )
 }

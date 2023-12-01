@@ -128,3 +128,26 @@ body {
 .login-input-submit[type="submit"]:hover {
   background-color: #45a049;
 }
+/* CSS Cadastro*/
+.cadastro-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.cadastro-div {
+  margin: 20px 0;
+}
+
+.cadastro-span {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.cadastro-span:hover {
+  color: #1d0547;
+  text-decoration: underline;
+}
