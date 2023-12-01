@@ -1,4 +1,5 @@
 'use client'
+
 import { loginAxios } from "@/util/axios"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -24,6 +25,7 @@ export default function Login() {
     const result = await loginAxios({ user, password })
 
     if (result.user === user && result.password === createHash('md5').update(password).digest('hex')) {
+      localStorage.setItem('user', JSON.stringify(result))
       setCookie('user', JSON.stringify(result))
       push("/home")
     } else {

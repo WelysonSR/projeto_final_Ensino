@@ -144,10 +144,10 @@ body {
   cursor: pointer;
   margin-right: 20px;
   font-size: 18px;
-  color: #333;
+  color: #fff;
 }
 
 .cadastro-span:hover {
-  color: #1d0547;
+  color: #333;
   text-decoration: underline;
 }

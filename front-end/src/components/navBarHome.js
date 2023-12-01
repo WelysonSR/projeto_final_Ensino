@@ -15,16 +15,19 @@ export default function NavBarHome() {
       <div className="nav-div">
         <ul className="nav-ul">
           <li className="nav-li nav-li-link:hover">
+            <Link className="nav-li-link" href="/home">Jogos</Link>
+          </li>
+          <li className="nav-li nav-li-link:hover">
             <Link className="nav-li-link" href="/cadastro">Cadastrar</Link>
+          </li>
+          <li className="nav-li nav-li-link:hover">
+            <Link className="nav-li-link" href="/biblioteca">Biblioteca</Link>
           </li>
           <li className="nav-li nav-li-link:hover">
             <Link className="nav-li-link" href="/noticias">Noticias</Link>
           </li>
           <li className="nav-li nav-li-link:hover">
             <Link className="nav-li-link" href="/comunidade">Comunidade</Link>
-          </li>
-          <li className="nav-li nav-li-link:hover">
-            <Link className="nav-li-link" href="/biblioteca">Biblioteca</Link>
           </li>
           <li className="nav-li nav-li-link:hover">
             <Link className="nav-li-link" href="/" onClick={() => deleteCookie('user')}>Sair</Link>
