@@ -140,6 +140,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  margin-top: 30px;
 }
 
 .cadastro-div {
