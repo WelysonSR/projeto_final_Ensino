@@ -17,7 +17,7 @@ export const addGamesAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/user/game`;
     const response = await axios.post(URL, data);
-    return response.data;
+    return response.data.message;
   } catch (error) {
     throw error;
   }
