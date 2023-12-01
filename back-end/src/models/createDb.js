@@ -1,18 +1,4 @@
-const mysql = require('mysql2');
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '123456'
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.error('Erro ao conectar ao banco de dados:', err);
-  } else {
-    console.log('Conexão bem-sucedida ao banco de dados MySQL');
-  }
-});
+const connection = require('./connection');
 
 connection.query('DROP DATABASE IF EXISTS dev_games', (err) => {
   if (err) {
@@ -177,17 +163,17 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
         });
 
         const insertJogos = `
-          INSERT INTO Jogo (nome, cat, plataforma_que, nota, status, recomendacao) VALUES
-            ('The Witcher 3', 'RPG', 'PC', 9.5, 'zerado', 'Sim'),
-            ('Red Dead Redemption 2', 'Ação e Aventura', 'PlayStation 4', 9.8, 'zerado', 'Sim'),
-            ('Animal Crossing: New Horizons', 'Simulação', 'Nintendo Switch', 9.0, 'jogado', 'Sim'),
-            ('Cyberpunk 2077', 'RPG', 'PC', 8.0, 'outros', 'Não'),
-            ('Among Us', 'Multijogador', 'Mobile', 8.5, 'jogado', 'Sim'),
-            ('The Legend of Zelda: Breath of the Wild', 'Ação e Aventura', 'Nintendo Switch', 9.7, 'zerado', 'Sim'),
-            ('GTA V', 'Ação e Aventura', 'PC', 9.3, 'zerado', 'Sim'),
-            ('FIFA 22', 'Esportes', 'PlayStation 5', 8.2, 'jogado', 'Sim'),
-            ('Minecraft', 'Aventura', 'PC', 9.0, 'zerado', 'Sim'),
-            ('Super Mario Odyssey', 'Ação e Aventura', 'Nintendo Switch', 9.5, 'zerado', 'Sim');
+        INSERT INTO Jogo (nome, cat, plataforma_que, nota, status, recomendacao) VALUES
+        ('The Witcher 3', 'RPG', 'Epic Games Store', 9.5, 'zerado', 'Sim'),
+        ('Red Dead Redemption 2', 'Ação e Aventura', 'Steam', 9.8, 'zerado', 'Sim'),
+        ('Animal Crossing: New Horizons', 'Simulação', 'Uplay', 9.0, 'jogado', 'Sim'),
+        ('Cyberpunk 2077', 'RPG', 'Steam', 8.0, 'outros', 'Não'),
+        ('Among Us', 'Multijogador', 'Steam', 8.5, 'jogado', 'Sim'),
+        ('The Legend of Zelda: Breath of the Wild', 'Ação e Aventura', 'PlayStation Store', 9.7, 'zerado', 'Sim'),
+        ('GTA V', 'Ação e Aventura', 'PC', 9.3, 'zerado', 'Sim'),
+        ('FIFA 23', 'Esportes', 'PlayStation Store', 8.2, 'jogado', 'Sim'),
+        ('Minecraft', 'Aventura', 'Epic Games Store', 9.0, 'zerado', 'Sim'),
+        ('Super Mario Odyssey', 'Ação e Aventura', 'Uplay', 9.5, 'zerado', 'Sim');
           `
         // Inserindo Jogos
         connection.query(insertJogos, (err) => {

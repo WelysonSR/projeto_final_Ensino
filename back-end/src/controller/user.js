@@ -33,13 +33,13 @@ async function getGamesByUserId(req, res) {
 async function addGameToUser(req, res) {
     const { userId, jogoId } = req.body;
     await userService.addGameToUser(userId, jogoId);
-    res.status(200).json({ message: 'Jogo adicionado com sucesso!'});
+    res.status(200).json({ message: 'Jogo adicionado com sucesso!' });
 }
 
 async function removeGameFromUser(req, res) {
     const { userId, jogoId } = req.body;
-    await userService.removeGameFromUser(userId, jogoId)
-    res.status(200).json({ message: 'Jogo removido com sucesso!'});
+    await userService.removeGameFromUser(userId, jogoId);
+    res.status(200).json({ message: 'Jogo removido com sucesso!' });
 }
 
 module.exports = {

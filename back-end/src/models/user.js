@@ -134,6 +134,7 @@ function removeGameFromUser(userId, jogoId) {
   });
 }
 
+
 module.exports = {
   getUser,
   insertUser,

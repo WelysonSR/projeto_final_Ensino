@@ -58,7 +58,7 @@ async function addGameToUser(userId, jogoId) {
         if (!userId || !jogoId) throw new Error('400|userId e jogoId são obrigatórios.');
         await userModel.addGameToUser(userId, jogoId);
     } catch (error) {
-        throw new Error('409|O jogo já existe e não pode ser duplicado.');
+        throw new Error('409|Usuário já possui este jogo.');
     }
 
 }
