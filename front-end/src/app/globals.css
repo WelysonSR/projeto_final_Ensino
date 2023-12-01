@@ -98,3 +98,55 @@ body {
 .carousel-caption-p {
   color: #fff;
 }
+
+/*CSS NavBar*/
+.nav {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-link {
+  text-decoration: none;
+  color: white; /* Cor do texto do logo */
+  font-weight: bold;
+  font-size: 1.5rem; /* Tamanho da fonte do logo */
+}
+
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-li {
+  margin-right: 20px; /* Espaçamento entre os itens da lista */
+}
+
+.nav-li-link {
+  text-decoration: none;
+  color: white; /* Cor do texto dos links */
+  font-weight: bold;
+}
+
+/* Adicione um estilo diferente ao link ativo ou ao link hover, se desejar */
+.nav-li-link:hover {
+  color: #ffd700; /* Cor ao passar o mouse sobre o link */
+}
+
+.nav-li-link.active {
+  color: #1d0547; /* Cor do link ativo */
+}
