@@ -5,6 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function NavBarHome() {
+  const logout = () => {
+    localStorage.removeItem('user')
+    deleteCookie('user')
+  }
+  
   return (
     <nav className="nav">
       <div className="nav-div nav-logo">
@@ -30,7 +35,7 @@ export default function NavBarHome() {
             <Link className="nav-li-link" href="/comunidade">Comunidade</Link>
           </li>
           <li className="nav-li nav-li-link:hover">
-            <Link className="nav-li-link" href="/" onClick={() => deleteCookie('user')}>Sair</Link>
+            <Link className="nav-li-link" href="/" onClick={logout}>Sair</Link>
           </li>
         </ul>
       </div>
