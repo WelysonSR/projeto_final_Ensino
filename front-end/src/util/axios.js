@@ -54,6 +54,16 @@ export const gamesAxios = async () => {
   }
 };
 
+export const createJogoAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/game/insert`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Rota Plataforma
 export const getPlataformaAxios = async () => {
   try {
