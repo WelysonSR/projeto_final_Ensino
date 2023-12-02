@@ -74,3 +74,13 @@ export const getPlataformaAxios = async () => {
     throw error;
   }
 };
+
+export const createPlataformaAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/platform/insert`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
