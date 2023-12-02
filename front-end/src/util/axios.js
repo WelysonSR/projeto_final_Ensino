@@ -55,3 +55,12 @@ export const gamesAxios = async () => {
 };
 
 // Rota Plataforma
+export const getPlataformaAxios = async () => {
+  try {
+    const URL = `${URL_BASE}/platform`;
+    const response = await axios.get(URL);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
