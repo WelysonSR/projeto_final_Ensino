@@ -8,14 +8,18 @@ export default function NavBar() {
         <Link className="nav-logo-link" href="/">
           <Image src="/img/logo.png" width={40} height={40} alt="Logo" />
         </Link>
+        <div className="nav-div">
+          <ul className="nav-ul">
+            <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/noticias">Noticias</Link></li>
+            <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/comunidade">Comunidade</Link></li>
+            <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/sobre">Sobre Nós</Link></li>
+          </ul>
+        </div>
       </div>
       <div className="nav-div">
         <ul className="nav-ul">
-          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/noticias">Noticias</Link></li>
-          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/comunidade">Comunidade</Link></li>
-          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/sobre">Sobre Nós</Link></li>
           <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/login">Login</Link></li>
-          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/cadastro">Criar Conta</Link></li>
+          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/cadastrar">Criar Conta</Link></li>
         </ul>
       </div>
     </nav>
