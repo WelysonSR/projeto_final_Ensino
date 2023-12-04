@@ -64,6 +64,16 @@ export const createJogoAxios = async (data) => {
   }
 };
 
+export const deletGamesAxios = async (id) => {
+  try {
+    const URL = `${URL_BASE}/game/delete/${id}`;
+    const response = await axios.delete(URL);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Rota Plataforma
 export const getPlataformaAxios = async () => {
   try {

@@ -348,3 +348,55 @@ p {
     width: 80%;
   }
 }
+
+/* Crud Lista de Jogos*/
+
+.lista-jogos {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.lista-jogos-h1 {
+  font-size: 24px;
+}
+
+.lista-jogos-ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-jogos-li {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-jogos-p {
+  margin: 0;
+}
+
+.lista-jogos-input[type="button"] {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.lista-jogos-input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+.lista-jogos-input[type="button"]:last-child {
+  background-color: #f44336;
+}
+
+.lista-jogos-input[type="button"]:last-child:hover {
+  background-color: #d32f2f;
+}

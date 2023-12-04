@@ -7,7 +7,7 @@ export function Card({ userId, id, cat, nome, nota, plataforma_disp, recomendaca
       const response = await addGamesAxios({ userId, jogoId: id });
       if (response) alert(response);
     } catch (error) {
-      alert('Ocorreu um erro ao adicionar o jogo à biblioteca.')
+      alert(error.response.data.message)
     }
   };
 

@@ -31,7 +31,7 @@ export default function Biblioteca() {
     <main>
       <NavBarHome />
       <div className="home-section">
-        {games.map(({ id, cat, nome, nota, plataforma_disp, recomendacao, status }) => (
+        {games && games.map(({ id, cat, nome, nota, plataforma_disp, recomendacao, status }) => (
           <CardBiblioteca
             key={id}
             userId={user.id}
