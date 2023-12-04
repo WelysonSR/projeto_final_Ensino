@@ -26,9 +26,5 @@ async function getPlatformByGames(req, res) {
   }
 
 module.exports = {
-    insertGame,
-    updateGame,
-    deleteGame,
-    getAllGames,
-    getPlatformByGames,
+    insertGame, updateGame, deleteGame, getAllGames, getPlatformByGames
 }

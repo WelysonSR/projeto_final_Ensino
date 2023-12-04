@@ -23,11 +23,11 @@ body {
 }
 
 .carousel-img {
-  height: 450px;
+  height: 580px;
 }
 
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(10, 10, 10, 0.5);
   border-radius: 10px;
   padding: 20px;
 }
@@ -42,7 +42,7 @@ body {
 
 /*CSS NavBar*/
 .nav {
-  background-color: #333;
+  background-color: #1b1f27;
   padding: 5px;
   display: flex;
   justify-content: space-between;
@@ -98,43 +98,99 @@ body {
 }
 
 /* CSS Page Login*/
+.area-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.login {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #181920;
+    border-radius: 10px;
+    width: 375px;
+    height: 425px;
+    padding: 35px;
+}
 
 .login-form {
-  max-width: 300px;
-  margin: 125px auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
 .login-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  margin-top: 10px;
+  background-color: #252A34;
+  padding-left: 10px;
+  color: #CBD0F7;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
+input::placeholder {
+  color: #CBD0F7;
+  font-size: 14px;
+  width: 260px;
+  
+}
+
+.login img {
+  width: 80px;
+  height: auto;
 }
 
 .login-span {
-  color: rgb(0, 0, 0);
   font-size: 12px;
-  margin-bottom: 10px;
-  display: block;
+  margin: 3px 0 0 1px;
+  color: #b40606;
+  display: none;
 }
 
 .login-input-submit[type="submit"] {
-  background-color: #4caf50;
-  border: none;
-  color: white;
-  cursor: pointer;
+    margin-top: 10px;
+    padding-left: 10px;
+    display: block;
+    background-color: #5568fe;
+    color: #CBD0F7;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    height: 45px;
+    border: 5px;
+    border-radius: 8px;
 }
 
 .login-input-submit[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #202020;
 }
+
+#p1 {
+  color: #CBD0F7;
+  margin-top: 10px;
+}
+
+a {
+  color: #5568fe;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+#a1 {
+  color: #CBD0F7;
+  margin-left: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
 /* CSS Cadastro*/
 .cadastro-main {
   display: flex;
@@ -178,30 +234,86 @@ body {
 }
 
 .card-h3 {
-  color: #fff;
+  color: #b40606;
   font-size: 1.2em;
 }
 
 .card-p {
-  color: #fff;
+  color: #CBD0F7;
   margin: 5px 0;
+  
+}
+
+.span_card {
+  color: gold;
+  margin-right: 10px;
 }
 
 .card-button {
-  background-color: #4caf50;
+  background-color: #5568fe;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .card-button:hover {
-  background-color: #45a049;
+  background-color: #202020;
 }
 
-/*CSS Cadastro de Jogo*/
+
+/* CSS de Noticias */
+
+.noticias {
+  margin: 50px;
+}
+
+h1 {
+  color: #b40606;
+  text-align: center;
+}
+
+h2 {
+  color: gold;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+p {
+  color: #3CFAD8;
+}
+
+/* CSS de Sobre Nós */
+
+.sobre {
+  margin: 50px;
+}
+
+.sobre-p {
+  color: #3CFAD8;
+  font-size: large;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icons img {
+  width: 30px;
+  margin: 10px;
+}
+
 .cj-form {
   max-width: 400px;
   margin: 0 auto;

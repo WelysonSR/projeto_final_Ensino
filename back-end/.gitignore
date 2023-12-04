@@ -17,7 +17,6 @@ Thumbs.db
 
 .vscode/
 
-.env
 config/secrets.json
 
 log/

@@ -9,7 +9,7 @@ export default function NavBarHome() {
     localStorage.removeItem('user')
     deleteCookie('user')
   }
-  
+
   return (
     <nav className="nav">
       <div className="nav-div nav-logo">

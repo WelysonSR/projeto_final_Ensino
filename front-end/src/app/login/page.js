@@ -34,7 +34,12 @@ export default function Login() {
   }
 
   return (
-    <form className="login-form">
+    <section className="area-login">
+    <div className="login"> 
+    <div>
+      <img src="/img/logo.png" />
+    </div>
+    <form className="login-form">  
       <input
         type="text"
         name="nome"
@@ -64,5 +69,9 @@ export default function Login() {
         onClick={login}
       />
     </form>
+    <a id="a1" href="esqueci-senha.html">Esqueceu sua senha?</a>
+    <p id="p1" >Ainda não tem uma conta?<a href="criar.html">Criar conta</a></p>
+    </div>
+    </section>
   )
 }

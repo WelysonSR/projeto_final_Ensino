@@ -59,29 +59,29 @@ export default function Carrossel() {
     <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className={`carousel-item ${cssActive_1}`}>
-          <img src="/img/free-fire.png" className="d-block w-100 carousel-img" alt="Free Fire" />
+          <img src="/img/the-witcher-jogo.png" className="d-block w-100 carousel-img" alt="The Witcher" />
           <div className="carousel-caption d-none d-md-block">
-            <h5 className="carousel-caption-h5">FREE FIRE</h5>
-            <p className="carousel-caption-p">É um jogo de tiro e sobrevivência mundialmente famoso disponível no celular. Cada partida dura cerca de 10 minutos e te coloca em uma ilha para enfrentar 49 jogadores na luta pela sobrevivência.</p>
-            <Link className="btn btn-primary" target="_blank" href="https://ff.garena.com/pt/">
+            <h5 className="carousel-caption-h5">The Witcher</h5>
+            <p className="carousel-caption-p">Você é Geralt de Rívia, mercenário matador de monstros. O lugar é um continente devastado pela guerra e infestado de monstros que você pode explorar à vontade. Seu contrato atual? Encontrar Ciri, a Criança da Profecia — uma arma viva que pode alterar a forma do mundo.</p>
+            <Link className="btn btn-primary" target="_blank" href="https://www.thewitcher.com/us/pt-br/">
               Jogar
             </Link>
           </div>
         </div>
 
         <div className={`carousel-item ${cssActive_2}`}>
-          <img src="/img/league-of-legends.png" className="d-block w-100 carousel-img" alt="League of Legends" />
+          <img src="/img/rdr2.png" className="d-block w-100 carousel-img" alt="Red Dead Redemption 2" />
           <div className="carousel-caption d-none d-md-block">
-            <h5 className="carousel-caption-h5">LEAGUE OF LEGENDS</h5>
-            <p className="carousel-caption-p">É um jogo de estratégia em que duas equipes de cinco poderosos campeões se enfrentam para destruir a base uma da outra. Escolha entre mais de 140 campeões para realizar jogadas épicas.</p>
-            <Link className="btn btn-primary" target="_blank" href="https://www.leagueoflegends.com/pt-br/">
+            <h5 className="carousel-caption-h5">Red Dead Redemption 2</h5>
+            <p className="carousel-caption-p">É um jogo eletrônico de ação-aventura desenvolvido pela  Rockstar Studios  e publicado pela  Rockstar Games. É uma prequela  de  Red Dead Redemption  de 2010, sendo o terceiro título da franquia  Red Dead. O enredo centra-se no bandido Arthur Morgan, um dos principais membros da gangue Van der Linde.</p>
+            <Link className="btn btn-primary" target="_blank" href="https://www.rockstargames.com/reddeadredemption2/">
               Jogar
             </Link>
           </div>
         </div>
 
         <div className={`carousel-item ${cssActive_3}`}>
-          <img src="/img/call-of-duty.png" className="d-block w-100 carousel-img" alt="Call of Duty" />
+          <img src="/img/cod.png" className="d-block w-100 carousel-img" alt="Call of Duty" />
           <div className="carousel-caption d-none d-md-block">
             <h5 className="carousel-caption-h5">CALL OF DUTY</h5>
             <p className="carousel-caption-p">Call of Duty é um jogo eletrônico de tiro em primeira pessoa desenvolvido pela Infinity Ward e publicado pela Activision. Foi lançado em 29 de outubro de 2003 para Microsoft Windows.</p>
