@@ -104,3 +104,23 @@ export const createPlataformaAxios = async (data) => {
     throw error;
   }
 };
+
+export const updatePlataformaAxios = async (id, data) => {
+  try {
+    const URL = `${URL_BASE}/platform/update/${id}`;
+    const response = await axios.patch(URL, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deletPlataformaAxios = async (id) => {
+  try {
+    const URL = `${URL_BASE}/platform/delete/${id}`;
+    const response = await axios.delete(URL);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -10,7 +10,11 @@ async function updatePlatform(id, data) {
 }
 
 async function deletePlatform(id){
-  await platformModels.deletePlatform(id);
+  try {
+    await platformModels.deletePlatform(id);
+  } catch (error) {
+    throw new Error('409|Plataforma vinculado a uma jogo.')
+  }
 }
 
 async function getAllPlatform() {
