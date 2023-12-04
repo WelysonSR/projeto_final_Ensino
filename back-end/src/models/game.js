@@ -42,6 +42,7 @@ async function deleteGame(gameId) {
         if (results.affectedRows > 0) {
           resolve('Jogo deletado com sucesso');
         } else {
+          console.log(`Delet erro capiturado: ${err}`);
           reject(new Error('Nenhum jogo encontrado para exclusão'));
         }
       }

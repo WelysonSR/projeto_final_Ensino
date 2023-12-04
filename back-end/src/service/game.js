@@ -1,30 +1,38 @@
 const gameModel = require('../models/game');
 
 async function insertGame(data) {
-    const result = await gameModel.insertGame(data);
-    return result;
+  const result = await gameModel.insertGame(data);
+  return result;
 }
 
 async function updateGame(gameId, game) {
-    const result = await gameModel.updateGame(gameId, game);
-    return result;
+  const result = await gameModel.updateGame(gameId, game);
+  return result;
 }
 
 async function deleteGame(gameId) {
+  try {
     const result = await gameModel.deleteGame(gameId);
     return result;
+  } catch (error) {
+    throw new Error('409|Jogo vinculado a uma Jogador e/ou Plataforma')
+  }
 }
 
 async function getAllGames() {
-    const result = await gameModel.getAllGames();
-    return result;
+  const result = await gameModel.getAllGames();
+  return result;
 }
 
-async function getPlatformByGames(idGame){
-    const result = await gameModel.getPlatformByGames(idGame);
-    return result;
-  }
+async function getPlatformByGames(idGame) {
+  const result = await gameModel.getPlatformByGames(idGame);
+  return result;
+}
 
 module.exports = {
-    insertGame, updateGame, deleteGame, getAllGames, getPlatformByGames
+  insertGame,
+  updateGame,
+  deleteGame,
+  getAllGames,
+  getPlatformByGames
 }

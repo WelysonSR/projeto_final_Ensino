@@ -67,7 +67,7 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
             cat VARCHAR(255),
             plataforma_que VARCHAR(255),
             nota DECIMAL(3,1),
-            status ENUM('jogado', 'zerado', 'outros'),
+            status ENUM('jogando', 'jogado', 'zerado', 'outros'),
             recomendacao ENUM('Sim', 'Não'),
             INDEX (nome)  -- Add an index on the 'nome' column
           );
