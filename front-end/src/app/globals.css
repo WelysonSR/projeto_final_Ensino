@@ -353,10 +353,20 @@ p {
 
 .lista-jogos {
   max-width: 800px;
-  margin: 30px auto;
+}
+
+.lista-jogos-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lista-jogos-title img {
+  cursor: pointer;
 }
 
 .lista-jogos-h1 {
+  cursor: pointer;
   font-size: 24px;
 }
 

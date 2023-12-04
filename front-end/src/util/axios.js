@@ -74,6 +74,16 @@ export const deletGamesAxios = async (id) => {
   }
 };
 
+export const updateGamesAxios = async (id, data) => {
+  try {
+    const URL = `${URL_BASE}/game/update/${id}`;
+    const response = await axios.patch(URL, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Rota Plataforma
 export const getPlataformaAxios = async () => {
   try {

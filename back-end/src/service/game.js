@@ -10,8 +10,12 @@ async function insertGame(data) {
 }
 
 async function updateGame(gameId, game) {
-  const result = await gameModel.updateGame(gameId, game);
+  try {
+    const result = await gameModel.updateGame(gameId, game);
   return result;
+  } catch (error) {
+    throw new Error('400|Erro ao atualizar: Verifique se todos os campos estão preenchidos corretamente.')
+  }
 }
 
 async function deleteGame(gameId) {

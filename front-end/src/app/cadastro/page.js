@@ -1,7 +1,7 @@
 'use client'
 
-import { CadastrarJogo } from "@/components/cadastraJogo"
 import { CadastrarPlataforma } from "@/components/cadastraPlataforma"
+import { ListarJogos } from "@/components/listaJogos"
 import NavBarHome from "@/components/navBarHome"
 import { useState } from "react"
 
@@ -17,7 +17,7 @@ export default function Cadastro() {
           <span className="cadastro-span" onClick={() => setRender(false)}>Plataforma</span>
         </div>
         {
-          render ? <CadastrarJogo /> : <CadastrarPlataforma />
+          render ? <ListarJogos /> : <CadastrarPlataforma />
         }
       </div>
     </main>
