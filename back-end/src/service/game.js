@@ -1,8 +1,12 @@
 const gameModel = require('../models/game');
 
 async function insertGame(data) {
-  const result = await gameModel.insertGame(data);
-  return result;
+  try {
+    const result = await gameModel.insertGame(data);
+    return result;
+  } catch (error) {
+    throw new Error('400|Erro ao cadastrar: Verifique se todos os campos estão preenchidos corretamente.')
+  }
 }
 
 async function updateGame(gameId, game) {

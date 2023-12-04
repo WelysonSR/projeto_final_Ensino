@@ -35,7 +35,7 @@ export function CadastrarJogo() {
       const result = await createJogoAxios(newJogo)
       if (result) alert(result)
     } catch (error) {
-      alert('Error ao cadastrar o jogo')
+      alert(error.response.data.message)
     }
   };
 
