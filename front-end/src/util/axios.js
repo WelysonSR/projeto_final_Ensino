@@ -43,6 +43,16 @@ export const getGamesAxios = async (id) => {
   }
 };
 
+export const updateUserAxios = async (id, data) => {
+  try {
+    const URL = `${URL_BASE}/user/update/${id}`;
+    const response = await axios.patch(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const removeGamesAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/user/delete-game`;

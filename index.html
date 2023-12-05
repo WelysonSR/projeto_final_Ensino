@@ -1,29 +1,55 @@
-<!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="esqueci-senha.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esqueci minha Senha</title>
-</head>
-<body>
-    <section class="area-recuperar-senha">
-        <div class="recuperar">
-            <div>
-                <img src="/img/logo.png" alt="logo">
+  <head>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
 
-            </div>
-            <p>Enviaremos um e-mail de recuperação de senha para o e-mail cadastrado.</p>
-            <form id="form" action="" method="PHOST">
-                <input type="email" name="email" placeholder="e-mail da sua conta">
-                <span class="span-required">Digite um e-mail válido</span>
-                
-                <input type="submit" value="enviar e-mail" />
-            </form>
-            <p>Já tem uma conta?<a href="login.html">Fazer login</a></p>
-        </div>
+      section {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+
+      a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Recuperação de senha do Dev Games</h1>
+      <p>Clique no link abaixo para alterar sua senha.</p>
+      <a href="#">Recuperar</a>
     </section>
-    
-</body>
-<script src="esqueci-senha.js"></script>
+  </body>
 </html>

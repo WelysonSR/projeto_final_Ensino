@@ -2,7 +2,7 @@
 
 const nodemailer = require('nodemailer');
 
-export async function sendEmail(email) {
+export async function sendEmail(email, userName) {
   // Configura o transporte do e-mail (altere com suas próprias credenciais)
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -17,7 +17,11 @@ export async function sendEmail(email) {
     from: 'devgameunifacs@gmail.com',
     to: email,
     subject: 'Recuperar Senha',
-    text: 'Conteúdo do e-mail',
+    text: `
+      Recuperação de senha do Dev Games
+      Clique no link abaixo para alterar sua senha.
+      http://localhost:3000/esqueceuSenha/${userName}
+    `,
   };
 
   // Tenta enviar o e-mail

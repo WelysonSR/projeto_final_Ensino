@@ -13,7 +13,7 @@ export default function EsqueceuSenha() {
     try {
       const result = await getUserAxios({ user })
       if(!result) return alert('Usuário não encontrado!')
-      const response = await sendEmail(result.email)
+      const response = await sendEmail(result.email, result.user)
       if(response) alert('Email enviado com sucesso! Verifique o spam.')
     } catch (error) {
       if(error.response)
