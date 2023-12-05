@@ -14,8 +14,8 @@ export default function Login() {
 
   const login = async (e) => {
     e.preventDefault()
-    if (user.length < 5) {
-      alert("Nome deve ter no mínimo 5 caracteres")
+    if (user.length < 3) {
+      alert("Nome deve ter no mínimo 3 caracteres")
       return
     }
     if (password.length < 6) {

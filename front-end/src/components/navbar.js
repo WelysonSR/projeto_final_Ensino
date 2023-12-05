@@ -19,7 +19,7 @@ export default function NavBar() {
       <div className="nav-div">
         <ul className="nav-ul">
           <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/login">Login</Link></li>
-          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/cadastrar">Criar Conta</Link></li>
+          <li className="nav-li nav-li-link:hover"><Link className="nav-li-link" href="/createUser">Criar Conta</Link></li>
         </ul>
       </div>
     </nav>

@@ -23,7 +23,7 @@ export const addGamesAxios = async (data) => {
   }
 };
 
-export const gatGamesAxios = async (id) => {
+export const getGamesAxios = async (id) => {
   try {
     const URL = `${URL_BASE}/user/games/${id}`;
     const response = await axios.get(URL);
@@ -36,6 +36,16 @@ export const gatGamesAxios = async (id) => {
 export const removeGamesAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/user/delete-game`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const createUserAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/user/create`;
     const response = await axios.post(URL, data);
     return response.data.message;
   } catch (error) {
