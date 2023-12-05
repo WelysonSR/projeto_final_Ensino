@@ -43,7 +43,7 @@ export function ListarJogos() {
   return (
     <section className="lista-jogos">
       <div className="lista-jogos-title">
-        <h1 className="lista-jogos-h1" onClick={() => setRender(true)}>Lista de Jogos</h1>
+        <h1 className="lista-jogos-h1" onClick={() => setRender(true)}>Lista</h1>
         <img src="/img/botao-adicionar.png" onClick={addUser} width={35} alt="Adicionar usuario" />
       </div>
       {

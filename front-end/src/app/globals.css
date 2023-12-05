@@ -450,3 +450,7 @@ p {
   position: fixed;
   bottom: 50px;
 }
+
+.margin-top-20px {
+  margin-top: 20px;
+}
