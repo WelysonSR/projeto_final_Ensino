@@ -3,6 +3,7 @@ const userController = require('../controller/user')
 
 router.post('/create', userController.createUser)
 router.post('/login', userController.login)
+router.get('/', userController.getUser)
 router.patch('/update/:id', userController.updateUser)
 router.delete('/delete/:id', userController.deleteUserById)
 router.patch('/disabled/:id', userController.logicalUserDeletionById)
