@@ -13,6 +13,16 @@ export const loginAxios = async (data) => {
   }
 };
 
+export const getUserAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/user`;
+    const response = await axios.post(URL, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const addGamesAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/user/game`;

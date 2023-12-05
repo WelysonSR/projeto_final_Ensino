@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { createHash } from 'crypto'
 import { setCookie } from 'cookies-next'
+import Link from "next/link";
 
 
 export default function Login() {
@@ -69,8 +70,8 @@ export default function Login() {
         onClick={login}
       />
     </form>
-    <a id="a1" href="esqueci-senha.html">Esqueceu sua senha?</a>
-    <p id="p1" >Ainda não tem uma conta?<a href="criar.html">Criar conta</a></p>
+    <Link id="a1" href="esqueceuSenha">Esqueceu sua senha?</Link>
+    <p id="p1" >Ainda não tem uma conta?<Link href="/createUser">Criar conta</Link></p>
     </div>
     </section>
   )
