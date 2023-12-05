@@ -9,5 +9,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/', '/home', '/user/:path*', '/platform/:path*', '/game/:path*'],
+  matcher: ['/', '/home', '/user/:path*', '/platform/:path*', '/game/:path*', '/biblioteca/:path*'],
 }
