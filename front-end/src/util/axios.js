@@ -164,3 +164,23 @@ export const addJogoPlataformaAxios = async (data) => {
     throw error;
   }
 };
+
+export const getJogosPlataformaAxios = async (id) => {
+  try {
+    const URL = `${URL_BASE}/platform/${id}/games`;
+    const response = await axios.get(URL);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deletJogosPlataformaAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/platform/delete-game`;
+    const response = await axios.delete(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};

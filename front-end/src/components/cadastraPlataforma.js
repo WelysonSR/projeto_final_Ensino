@@ -1,6 +1,6 @@
 'use client'
 
-import { addJogoPlataformaAxios, createPlataformaAxios, gamesAxios, getPlataformaAxios, updatePlataformaAxios } from "@/util/axios";
+import { addJogoPlataformaAxios, createPlataformaAxios, deletJogosPlataformaAxios, gamesAxios, getJogosPlataformaAxios, getPlataformaAxios, updatePlataformaAxios } from "@/util/axios";
 import { useEffect, useState } from "react";
 
 export function CadastrarPlataforma() {
@@ -10,6 +10,8 @@ export function CadastrarPlataforma() {
   const [jogoPlataforma, setJogoPlataforma] = useState([])
   const [idPlatform, getIdPlataforma] = useState('')
   const [idGame, getIdJogo] = useState('')
+  const [listGame, setListGame] = useState([])
+  const [render, setRender] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,9 +65,37 @@ export function CadastrarPlataforma() {
     }
   }
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const listGamePlataforma = await getJogosPlataformaAxios(idPlatform)
+      console.log(listGamePlataforma);
+      setRender(false)
+      setListGame(listGamePlataforma)
+    };
+    if (idPlatform) fetchData();
+  }, [idPlatform])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const game = listGame.find(g => g.id === Number(idGame));
+      if (game) setRender(true)
+    };
+    if (idPlatform) fetchData();
+  }, [idGame])
+
   const adicionarJogo = async () => {
     try {
       const result = await addJogoPlataformaAxios({ idGame, idPlatform })
+      if (result) alert(result)
+    } catch (error) {
+      alert(error.response.data.message)
+    }
+  }
+
+  const deletarJogo = async () => {
+    console.log('Delear jogo da plataforma');
+    try {
+      const result = await deletJogosPlataformaAxios({ idGame, idPlatform })
       if (result) alert(result)
     } catch (error) {
       alert(error.response.data.message)
@@ -131,13 +161,21 @@ export function CadastrarPlataforma() {
               </option>
             ))}
           </select>
-
-          <input
-            type="button"
-            value="Adicionar"
-            className="cj-input-btn"
-            onClick={adicionarJogo}
-          />
+          {
+            render ?
+              <input
+                type="button"
+                value="Deletar"
+                className="cj-input-btn"
+                onClick={deletarJogo}
+              /> :
+              <input
+                type="button"
+                value="Adicionar"
+                className="cj-input-btn"
+                onClick={adicionarJogo}
+              />
+          }
         </form>
       </div>
     </section>
