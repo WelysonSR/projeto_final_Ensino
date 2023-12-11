@@ -25,24 +25,27 @@ export default function CreateUser() {
   }
 
   return (
-    <section>
-      <NavBar />
-      <h1>Create User</h1>
-      <form className="cj-form">
-        <input
+    <section className="area-create">
+      <NavBar />      
+      <div className="create">
+          <h3 className="titulo" >Cadastrar</h3>
+           
+      <form className="creatUser-form">
+      <input
           type="text"
-          value={user}
-          name="user"
-          className="cj-input"
-          placeholder="Usuario"
-          onChange={({ target }) => setUser(target.value)}
+          value={email}
+          name="email"
+          className="create-input"
+          placeholder="Endereço de e-mail"
+          onChange={({ target }) => setEmail(target.value)}
           required
         />
+        
         <input
           type="text"
           value={firstName}
           name="firstName"
-          className="cj-input"
+          className="create-input"
           placeholder="Nome"
           onChange={({ target }) => setFirstName(target.value)}
           required
@@ -51,25 +54,27 @@ export default function CreateUser() {
           type="text"
           value={lastName}
           name="lastName"
-          className="cj-input"
-          placeholder="Sobre nome"
+          className="create-input"
+          placeholder="Sobrenome"
           onChange={({ target }) => setLastNamee(target.value)}
           required
         />
+        
         <input
           type="text"
-          value={email}
-          name="email"
-          className="cj-input"
-          placeholder="Emial"
-          onChange={({ target }) => setEmail(target.value)}
+          value={user}
+          name="user"
+          className="create-input"
+          placeholder="Usuário"
+          onChange={({ target }) => setUser(target.value)}
           required
         />
+
         <input
           type="password"
           value={password}
           name="password"
-          className="cj-input"
+          className="create-input"
           placeholder="Senha"
           onChange={({ target }) => setPassword(target.value)}
           required
@@ -78,7 +83,7 @@ export default function CreateUser() {
           type="password"
           value={password1}
           name="password1"
-          className="cj-input"
+          className="create-input"
           placeholder="Confirma senha"
           onChange={({ target }) => setPassword1(target.value)}
           required
@@ -87,9 +92,10 @@ export default function CreateUser() {
           type="button"
           value="Cadastrar"
           onClick={createUser}
-          className="cj-input-btn"
+          className="create-button"
         />
       </form>
+      </div>
     </section>
   )
 }

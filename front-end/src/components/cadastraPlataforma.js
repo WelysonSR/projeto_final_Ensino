@@ -93,7 +93,7 @@ export function CadastrarPlataforma() {
   }
 
   const deletarJogo = async () => {
-    console.log('Delear jogo da plataforma');
+    console.log('Deletar jogo da plataforma');
     try {
       const result = await deletJogosPlataformaAxios({ idGame, idPlatform })
       if (result) alert(result)
@@ -110,7 +110,7 @@ export function CadastrarPlataforma() {
           value={nome}
           className="cj-input"
           onChange={(e) => setNome(e.target.value)}
-          placeholder="Digite o nome do jogo"
+          placeholder="Digite o nome da plataforma"
         />
         {
           updatePlataforma ?
@@ -178,6 +178,15 @@ export function CadastrarPlataforma() {
           }
         </form>
       </div>
+      <ul className="lista-jogos-ul">
+        {
+          listGame && listGame.map((game) => (
+            <li key={game.id} className="lista-jogos-li">
+              <p className="lista-jogos-p">{game.nome}</p>
+            </li>
+          ))
+        }
+      </ul>
     </section>
   )
 }

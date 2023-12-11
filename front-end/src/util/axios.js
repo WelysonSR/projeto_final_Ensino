@@ -178,7 +178,7 @@ export const getJogosPlataformaAxios = async (id) => {
 export const deletJogosPlataformaAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/platform/delete-game`;
-    const response = await axios.delete(URL, data);
+    const response = await axios.delete(URL, {data});
     return response.data.message;
   } catch (error) {
     throw error;

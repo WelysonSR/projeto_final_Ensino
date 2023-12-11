@@ -1,5 +1,6 @@
 'use client'
 
+import NavBar from "@/components/navbar";
 import { getUserAxios } from "@/util/axios";
 import { sendEmail } from "@/util/sendEmail";
 import Link from "next/link";
@@ -22,21 +23,28 @@ export default function EsqueceuSenha() {
   }
 
   return (
-    <section>
-      <img src="/img/logo.png" width={80} alt="logo" />
-      <p>Enviaremos um e-mail de recuperação de senha para o e-mail cadastrado.</p>
-      <form>
+    <section className="area-recuperar-senha">
+      <NavBar/>
+      <div className="recuperar">
+        <div className="recuperar-img">
+        <img src="/img/logo.png" alt="logo" />
+        </div>
+      
+      <p id="p2">Enviaremos um e-mail de recuperação de senha para o e-mail cadastrado.</p>
+      <form className="recuperar-senha">
         <input
           type="text"
           name="nome"
+          className="recuperar-input"
           value={user}
           placeholder="nome de usuario"
           onChange={({ target }) => setName(target.value)}
         />
-        <span>Digite seu usuário</span>
-        <input type="submit" value="Enviar" onClick={handleSubmit} />
+        <span className="recuperar-span">Digite seu usuário</span>
+        <input type="submit" className="recuperar-botao" value="Enviar" onClick={handleSubmit} />
       </form>
-      <p>Já tem uma conta?<Link href="/login">Fazer login</Link></p>
+      <p id="p3">Já tem uma conta?<Link href="/login">Fazer login</Link></p>
+      </div>
     </section>
   )
 }

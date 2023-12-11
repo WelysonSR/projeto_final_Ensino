@@ -6,36 +6,40 @@ import { useState } from "react"
 import { createHash } from 'crypto'
 import { setCookie } from 'cookies-next'
 import Link from "next/link";
+import NavBar from "@/components/navbar"
 
 
 export default function Login() {
-  const [user, setName] = useState("")
+  const [user, setName] = useState("") 
   const [password, setPassword] = useState("")
   const { push } = useRouter()
 
   const login = async (e) => {
     e.preventDefault()
-    if (user.length < 3) {
-      alert("Nome deve ter no mínimo 3 caracteres")
-      return
-    }
-    if (password.length < 6) {
-      alert("Digite uma senha com no minimo 6 caracteres")
-      return
-    }
-    const result = await loginAxios({ user, password })
-
-    if (result.user === user && result.password === createHash('md5').update(password).digest('hex')) {
-      localStorage.setItem('user', JSON.stringify(result))
-      setCookie('user', JSON.stringify(result))
-      push("/home")
-    } else {
-      alert("Usuário ou senha incorreto")
+    try {
+      if (user.length < 3) {
+        alert("Nome deve ter no mínimo 3 caracteres")
+        return
+      }
+      if (password.length < 6) {
+        alert("Digite uma senha com no minimo 6 caracteres")
+        return
+      }
+      const result = await loginAxios({ user, password })
+      
+      if (result.user === user && result.password === createHash('md5').update(password).digest('hex')) {
+        localStorage.setItem('user', JSON.stringify(result))
+        setCookie('user', JSON.stringify(result))
+        push("/home")
+      }
+    } catch (error) {
+      alert(error.response.data.message)
     }
   }
 
   return (
     <section className="area-login">
+      <NavBar/>
     <div className="login"> 
     <div>
       <img src="/img/logo.png" />
