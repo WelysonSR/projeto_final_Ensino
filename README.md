@@ -1,8 +1,3 @@
-Perfeito 👍
-Com base no conteúdo do PDF e nas suas instruções (remover qualquer menção à instituição de ensino e deixar o texto em formato de README para o GitHub, explicando que o projeto foi desenvolvido passo a passo para fins educacionais), aqui está uma versão pronta para uso:
-
----
-
 # 🎮 Catálogo de Jogos — Projeto Educacional
 
 ## 📘 Sobre o Projeto
