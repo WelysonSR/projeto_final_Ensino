@@ -1,0 +1,14 @@
+{
+  "name": "gamehub-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd back-end && yarn install && cd ../front-end && yarn install",
+    "dev": "concurrently \"cd back-end && yarn dev\" \"cd front-end && yarn dev\"",
+    "start:back": "cd back-end && yarn start",
+    "start:front": "cd front-end && yarn start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

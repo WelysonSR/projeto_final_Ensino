@@ -56,6 +56,23 @@ A aplicação permite ao usuário **gerenciar um catálogo de jogos pessoais**, 
 4. O sistema deve seguir as **10 heurísticas de usabilidade de Nielsen**.
 
 ---
+## 🚀 Inicialização do Projeto
+
+Para instalar as dependências e iniciar a aplicação, siga os passos abaixo:
+
+```bash
+# Instalar dependências do back-end e front-end
+yarn install:all
+
+# Rodar o projeto em modo de desenvolvimento
+yarn dev
+```
+
+> **Observação:**  
+> O script `yarn install:all` está configurado para instalar as dependências das pastas `back-end` e `front-end` automaticamente.  
+> O comando `yarn dev` inicia ambos os servidores em paralelo usando `concurrently`.
+
+---
 
 ## 🧠 Conceitos Envolvidos
 
@@ -80,5 +97,5 @@ Este projeto foi elaborado com **finalidade didática**, para demonstrar na prá
 ## 🧾 Licença
 
 Este projeto é de **uso educacional** e pode ser reutilizado livremente para fins de aprendizado e demonstração.
-
 ---
+
